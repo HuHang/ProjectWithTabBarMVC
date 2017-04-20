@@ -1,0 +1,121 @@
+//
+//  PrefixHeader.pch
+//  ProjectWithTabBarMVC
+//
+//  Created by Charlot on 2017/4/20.
+//  Copyright © 2017年 Charlot. All rights reserved.
+//
+
+/*
+ *
+ *                             _ooOoo_
+ *                            o8888888o
+ *                            88" . "88
+ *                            (| -_- |)
+ *                            O\  =  /O
+ *                         ____/`---'\____
+ *                       .'  \\|     |//  `.
+ *                      /  \\|||  :  |||//  \
+ *                     /  _||||| -:- |||||-  \
+ *                     |   | \\\  -  /// |   |
+ *                     | \_|  ''\---/''  |   |
+ *                     \  .-\__  `-`  ___/-. /
+ *                   ___`. .'  /--.--\  `. . __
+ *                ."" '<  `.___\_<|>_/___.'  >'"".
+ *               | | :  `- \`.;`\ _ /`;.`/ - ` : | |
+ *               \  \ `-.   \_ __\ /__ _/   .-` /  /
+ *          ======`-.____`-.___\_____/___.-`____.-'======
+ *                             `=---='
+ *          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ *                     佛祖保佑        永无BUG
+ *            佛曰:
+ *                   写字楼里写字间，写字间里程序员；
+ *                   程序人员写程序，又拿程序换酒钱。
+ *                   酒醒只在网上坐，酒醉还来网下眠；
+ *                   酒醉酒醒日复日，网上网下年复年。
+ *                   但愿老死电脑间，不愿鞠躬老板前；
+ *                   奔驰宝马贵者趣，公交自行程序员。
+ *                   别人笑我忒疯癫，我笑自己命太贱；
+ *                   不见满街漂亮妹，哪个归得程序员？
+ */
+//$(SRCROOT)/WTSProject/PrefixHeader.pch
+
+
+
+
+
+
+
+
+
+
+
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+
+#ifdef DEBUG
+#define HHCodeLog(...) NSLog(__VA_ARGS__)
+#else
+#define HHCodeLog(...)
+#endif
+
+
+#import "UITextField+Util.h"
+#import "UIButton+Util.h"
+#import "UILabel+Util.h"
+#import "NSString+Init.h"
+#import "NSString+TimeFormat.h"
+#import "NSString+FontAwesome.h"
+#import "UITableView+EmptyData.h"
+
+#import "HLGifHeader.h"
+#import "HLNormalHeader.h"
+#import "CallHttpManager.h"
+#import "UIAlertViewManager.h"
+#import "PCMBProgressHUD.h"
+
+#import "Masonry.h"
+#import "IQKeyboardManager.h"
+#import "MJExtension.h"
+
+
+#pragma mark - NSUserdefault存储字段
+#define FIRSTLUNCH @"firstLaunch"
+#define USERNAME @"user_name"
+#define PASSWORD @"password"
+#define SAVE_PWD @"save_pwd"
+#define Basic_Auth @"strForBasicAuth"
+#define BaseURL @"baseUrlStr"
+#define BasePORT @"basePort"
+
+#define app_Version [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+
+#pragma mark - Other
+
+/*----------------------------Application KeyWindow---------------------------------*/
+#define AppMainWindow [UIApplication sharedApplication].keyWindow
+/*--------------------------------------screenWidth&Height------------------------------------*/
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#define SCREEN_HEIGHT_WithNavigationBar [UIScreen mainScreen].bounds.size.height - 64
+#define SCREEN_HEIGHT_WithTabBar [UIScreen mainScreen].bounds.size.height - 49
+#define SCREEN_HEIGHT_WithNavAndTabBar [UIScreen mainScreen].bounds.size.height - 113
+
+/*--------------------------------------color------------------------------------*/
+#define WTSBlueColor [UIColor colorWithRed:((float)((0x297fb8 & 0xFF0000) >> 16))/255.0 green:((float)((0x297fb8 & 0xFF00) >> 8))/255.0 blue:((float)(0x297fb8 & 0xFF))/255.0 alpha:1.0]
+
+#define UIColorFromHEX(rgbValue,a) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:a]
+#define UIColorFromRGB(r,g,b) [UIColor colorWithRed:(r/255.0 green:g/255.0 blue:b/255.0 alpha:1.0]
+#define UIColorFromRGBA(r,g,b,a) [UIColor colorWithRed:(r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
+
+/*--------------------------------------FontAwe------------------------------------*/
+#define SystemFont(font) [UIFont systemFontOfSize:font]
+
+/*--------------------------------------FontAwe------------------------------------*/
+#define FontAweStr(name) [NSString fontAwesomeIconStringForEnum:name]
+#define FontAweStrFont(font) [UIFont fontWithName:kFontAwesomeFamilyName size:font]
+
+
+#endif /* PrefixHeader_pch */
